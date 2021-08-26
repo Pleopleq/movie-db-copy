@@ -1,6 +1,8 @@
 :root {
   --main-blue-color: rgb(3, 37, 65);
   --main-white-color: #fff;
+  --main-light-blue: rgb(1, 180, 228);
+  --light-gray: #e4e7eb;
 }
 
 html {
@@ -116,9 +118,42 @@ img[class] {
 }
 
 .dropdown-item {
+  font-weight: 700;
+  font-size: 1.2rem;
   width: 80%;
   margin-top: 1rem;
   align-items: center;
   padding: 5px 16px;
+  border-radius: 0.6rem;
   border: 1px solid #e3e3e3;
+}
+
+.dropdown-item__active {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 80%;
+  padding: 30px 16px;
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+}
+
+.dropdown-item__active select {
+  margin-top: 1rem;
+  padding: 0.4rem;
+  padding-right: 6rem;
+  border: none;
+  background-color: var(--light-gray);
+}
+
+.sidebar-submit {
+  width: 92%;
+  height: 3rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: var(--main-white-color);
+  background-color: var(--main-light-blue);
+  margin-top: 2rem;
+  border-radius: 2rem;
+  border: none;
 }
