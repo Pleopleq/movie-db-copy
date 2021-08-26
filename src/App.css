@@ -5,6 +5,18 @@
 
 html {
   font-family: "Source Sans Pro", Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding-top: 65px;
+}
+
+.shadow {
+  box-shadow: 7px 13px 12px -2px rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 7px 13px 12px -2px rgba(0, 0, 0, 0.13);
+  -moz-box-shadow: 7px 13px 12px -2px rgba(0, 0, 0, 0.13);
 }
 
 .navbar {
@@ -19,7 +31,7 @@ html {
   left: 0;
   height: 64px;
   width: 100%;
-  z-index: 10;
+  z-index: 1;
   transition: top 0.2s linear;
 }
 
@@ -70,4 +82,43 @@ html {
 .navbar-button:hover {
   background-color: var(--main-white-color);
   color: var(--main-blue-color);
+}
+
+.main-container {
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.home-container {
+  display: grid;
+  grid-template-columns: 0.3fr 1fr;
+  grid-auto-flow: column;
+}
+
+.items-grid {
+  margin: 1rem;
+  padding-left: 1rem;
+  display: grid;
+  gap: 1rem;
+  grid-auto-rows: 35rem;
+  grid-template-columns: repeat(auto-fill, minmax(13rem, 1fr));
+}
+
+img[class] {
+  width: 100%;
+}
+
+.item-container img {
+  height: 20%;
+  border-radius: 1rem 1rem 0% 0%;
+}
+
+.dropdown-item {
+  width: 80%;
+  margin-top: 1rem;
+  align-items: center;
+  padding: 5px 16px;
+  border: 1px solid #e3e3e3;
 }
