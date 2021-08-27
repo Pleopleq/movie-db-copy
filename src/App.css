@@ -112,9 +112,26 @@ img[class] {
   width: 100%;
 }
 
+.item-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .item-container img {
   height: 20%;
   border-radius: 1rem 1rem 0% 0%;
+}
+
+.item-score__background {
+  background-color: rgb(3, 37, 65);
+  border-radius: 4rem;
+  width: 3rem;
+  color: white;
+}
+
+.item-score {
+  text-align: center;
+  font-weight: bold;
 }
 
 .dropdown-item {
@@ -136,6 +153,10 @@ img[class] {
   padding: 30px 16px;
   background-color: #fff;
   border: 1px solid #e3e3e3;
+}
+
+.dropdown-item__active label {
+  font-weight: 300;
 }
 
 .dropdown-item__active select {

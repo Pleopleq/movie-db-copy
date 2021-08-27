@@ -7,12 +7,12 @@ const SidebarInput: React.FC<SidebarInputProps> = ({
   id,
 }: SidebarInputProps) => {
   return (
-    <div className='dropdown-item__active'>
+    <div className='dropdown-item__active shadow'>
       <label htmlFor={forLabel}>{label}</label>
       <select name={name} id={id}>
-        <option value='volvo'>Upcoming</option>
-        <option value='saab'>Popular</option>
-        <option value='opel'>Top Rated</option>
+        <option value='popular'>Popular</option>
+        <option value='upcoming'>Upcoming</option>
+        <option value='topRated'>Top Rated</option>
       </select>
     </div>
   );

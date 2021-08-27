@@ -1,8 +1,8 @@
 interface ItemProps {
   title: string;
-  releaseDate: string;
-  score: string;
-  coverImg: string;
+  release_date: string;
+  vote_average: string;
+  poster_path: string;
 }
 
 export default ItemProps;
