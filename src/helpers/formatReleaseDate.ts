@@ -13,7 +13,7 @@ enum Months {
   Dec = 12,
 }
 
-export default function formatReleaseDate(releaseDate: string) {
+export default function formatReleaseDate(releaseDate: string): string {
   const dateToArr = releaseDate.split("-");
   const day = dateToArr[2];
   const year = dateToArr[0];

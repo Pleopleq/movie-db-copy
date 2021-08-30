@@ -1,9 +1,16 @@
-const NavbarImageItem: React.FC = () => {
-    return (
-        <div style={{ width: "50%" }}>
-            <img src="/images/logo.jpg" alt="movie db logo"  style={{ width: "50%" }}/>
-        </div>
-    )
-}
+import NavbarImageProps from "../Interfaces/Navbar/NavbarImageProps";
 
-export default NavbarImageItem
+const NavbarImageItem: React.FC<NavbarImageProps> = ({
+  src,
+  alt,
+  className,
+  imgClassName,
+}: NavbarImageProps) => {
+  return (
+    <div className={className}>
+      <img src={src} alt={alt} className={imgClassName} />
+    </div>
+  );
+};
+
+export default NavbarImageItem;
