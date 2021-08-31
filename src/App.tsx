@@ -14,7 +14,7 @@ const App: React.FC = () => {
   const dispatch = useDispatch();
 
   const onLoad = useCallback(() => {
-    dispatch(fetchMovies());
+    dispatch(fetchMovies("popular"));
   }, [dispatch]);
 
   useEffect(() => {
