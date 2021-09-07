@@ -1,35 +1,34 @@
 import "./App.css";
-import { useEffect, useCallback } from "react";
-import { useSelector, useDispatch, RootStateOrAny } from "react-redux";
-import { fetchMovies } from "./redux/Movies/actions";
+import {
+  BrowserRouter,
+  Route,
+  Switch,
+  RouteComponentProps,
+} from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import HomeContainer from "./components/HomeContainer";
-import Sidebar from "./components/Sidebar/Sidebar";
-import ItemGrid from "./components/PresentionalGrid/ItemGrid";
+import routes from "./config/routes";
 
 const App: React.FC = () => {
-  const movies = useSelector(
-    (state: RootStateOrAny) => state.moviesReducer.movies
-  );
-  const dispatch = useDispatch();
-
-  const onLoad = useCallback(() => {
-    dispatch(fetchMovies("popular"));
-  }, [dispatch]);
-
-  useEffect(() => {
-    onLoad();
-  }, [onLoad]);
-
   return (
     <>
       <Navbar></Navbar>
       <main className='main-container'>
-        <h2>Popular Movies</h2>
-        <HomeContainer>
-          <Sidebar></Sidebar>
-          <ItemGrid items={movies.results}></ItemGrid>
-        </HomeContainer>
+        <BrowserRouter>
+          <Switch>
+            {routes.map((route, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  render={(props: RouteComponentProps<any>) => (
+                    <route.component {...props} {...route.props} />
+                  )}
+                />
+              );
+            })}
+          </Switch>
+        </BrowserRouter>
       </main>
     </>
   );

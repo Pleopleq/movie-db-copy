@@ -8,10 +8,12 @@ const ItemGrid: React.FC<ItemGridProps> = ({ items }: ItemGridProps) => {
     <div className='items-grid'>
       {items?.map((item) => (
         <Item
+          key={item.id}
           title={item.title}
           release_date={formatReleaseDate(item.release_date)}
           vote_average={formatScore(item.vote_average)}
-          poster_path={item.poster_path}></Item>
+          poster_path={item.poster_path}
+          id={item.id}></Item>
       ))}
     </div>
   );
