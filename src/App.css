@@ -39,6 +39,7 @@ body {
 
 .navbar-logo-container {
   display: flex;
+  align-items: center;
 }
 
 .navbar-logo {

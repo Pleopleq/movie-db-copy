@@ -11,9 +11,9 @@ import routes from "./config/routes";
 const App: React.FC = () => {
   return (
     <>
-      <Navbar></Navbar>
-      <main className='main-container'>
-        <BrowserRouter>
+      <BrowserRouter>
+        <Navbar></Navbar>
+        <main className='main-container'>
           <Switch>
             {routes.map((route, index) => {
               return (
@@ -28,8 +28,8 @@ const App: React.FC = () => {
               );
             })}
           </Switch>
-        </BrowserRouter>
-      </main>
+        </main>
+      </BrowserRouter>
     </>
   );
 };

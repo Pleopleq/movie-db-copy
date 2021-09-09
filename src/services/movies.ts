@@ -8,4 +8,12 @@ async function getMoviesBy(query: string) {
   return response.data;
 }
 
-export { getMoviesBy };
+async function getSingleMovieBy(id: string) {
+  const response: AxiosResponse = await axios.get(
+    `https://api.themoviedb.org/3/movie/${id}?api_key=${DANGEROUSLY_API_KEY_DEFINITION}&language=en-US`
+  );
+
+  return response.data;
+}
+
+export { getMoviesBy, getSingleMovieBy };

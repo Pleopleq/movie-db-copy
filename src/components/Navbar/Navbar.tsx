@@ -3,6 +3,7 @@ import NavbarButton from "../NavbarButton";
 import { ReactComponent as MovieDBLogo } from "./logo.svg";
 import NavbarTextItem from "../NavbarText";
 import NavbarImageItem from "../NavbarImageI";
+import { Link } from "react-router-dom";
 
 const Navbar: React.FC = () => {
   return (
@@ -10,7 +11,9 @@ const Navbar: React.FC = () => {
       <div className='navbar-items'>
         <div className='navbar-primary'>
           <div className='navbar-logo-container'>
-            <MovieDBLogo className='navbar-logo'></MovieDBLogo>
+            <Link to={"/"}>
+              <MovieDBLogo className='navbar-logo'></MovieDBLogo>{" "}
+            </Link>
           </div>
           <NavbarTextItem text='Movies'></NavbarTextItem>
           <NavbarTextItem text='TV Shows'></NavbarTextItem>
