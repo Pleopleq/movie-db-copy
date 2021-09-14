@@ -3,15 +3,22 @@ import { useSelector, useDispatch, RootStateOrAny } from "react-redux";
 import { useEffect, useCallback } from "react";
 import { fetchSingleMovie } from "../redux/Movies/actions";
 import Page from "../Interfaces/page";
+import formatMovieRuntime from "../helpers/formatMovieRuntime";
 
 const SingleMovie: React.FC<Page & RouteComponentProps<any>> = (props) => {
   const movieID = props.match.params.id;
-  const movie = useSelector(
+  let movie = useSelector(
     (state: RootStateOrAny) => state.moviesReducer.singleMovie
   );
-  const releaseYear = movie.release_date?.split("-")[0];
-
   const dispatch = useDispatch();
+
+  const releaseYear = movie.release_date?.split("-")[0];
+  const genres = movie.genres
+    ?.map((genre: { name: string }) => {
+      return genre.name;
+    })
+    .join(", ");
+  const movieDuration = formatMovieRuntime(movie.runtime);
 
   const onLoad = useCallback(() => {
     dispatch(fetchSingleMovie(movieID));
@@ -33,6 +40,11 @@ const SingleMovie: React.FC<Page & RouteComponentProps<any>> = (props) => {
           {movie.original_title}
           <span>{` (${releaseYear})`}</span>
         </h1>
+        <p>
+          {`${genres}`} &#8226; {`${movieDuration}`}{" "}
+        </p>
+        <p>{movie.tagline}</p>
+        <h2>Overview</h2>
         <p>{movie.overview}</p>
       </div>
     </div>

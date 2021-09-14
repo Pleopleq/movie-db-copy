@@ -12,6 +12,7 @@ html {
 }
 
 body {
+  box-sizing: border-box;
   padding-top: 65px;
 }
 
@@ -197,4 +198,16 @@ body {
   margin-top: 2rem;
   border-radius: 2rem;
   border: none;
+}
+
+.movie-container {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 2rem;
+  position: absolute;
+  top: 64px;
+  right: 0;
+  left: 0;
+  color: var(--main-white-color);
+  background-color: var(--main-blue-color);
 }
